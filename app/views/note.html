@@ -1,0 +1,27 @@
+<header class="clearfix">
+  <a ng-href="#/" class="home">
+    <div class="arrow clearfix">
+      <img id="rArrow" src="images/arrow.svg" alt="arrow" width="15">
+      <span>All Notes</span>
+    </div>
+  </a>
+
+  <ul id="noteList" class="clearfix">
+    <li><a id="trash" ng-href="/"><img src="images/remove.svg" alt="delete" width="28"></a></li>
+  </ul>
+</header>
+
+<form ng-submit="submitPost()">
+  <div class="title">
+    <input type="text" placeholder="Enter Title…" ng-model="post.title" required>
+  </div>
+  
+  <div class="copy">
+    <textarea cols="30" rows="10" ng-model="post.copy"></textarea>
+  </div>
+  
+  <div class="btn">
+    <span></span>
+    <input type="submit" value="SAVE">
+  </div>
+</form>

@@ -1,0 +1,32 @@
+<header class="clearfix">
+  <h2 class="title">All Notes</h2>
+
+  <ul>
+    <a ng-href="#/note"><li><img src="images/add.svg" alt="add" width="35"></li></a>
+  </ul>
+</header>
+
+<div class="container">
+
+  <!-- list container, ng-repeat repeats all lists in object -->
+  <div class="listContainer" ng-repeat="post in posts">
+    <div class="list">
+      <a ng-href="#/view/{{ post.$id }}"> <!-- bind list title property -->
+        <h3 class="title">{{ post.title | limitTo: 12 }}<span class="geo">{{ geo | limitTo: 20 }} …</span></h3>
+        <span>{{ post.copy | limitTo: 30 }} …</span> <!-- bind list copy property, limit to 30 characters -->
+      </a>
+  
+      <div class="arrow clearfix" ng-click="slide()">
+        <span>slide</span>
+        <img src="images/arrow.svg" alt="arrow" width="15">
+      </div>
+    </div>
+
+    <!-- hidden menu -->
+    <div id="hiddenMenu">
+      <a ng-href="#/about" id="about" aria-label="About">About</a>
+      <a id="delete" ng-click="deletePost(post)" aria-label="Remove">Delete</a>
+    </div>
+  </div>
+
+</div>

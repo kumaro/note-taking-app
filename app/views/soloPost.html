@@ -1,0 +1,42 @@
+<header class="clearfix">
+  <a ng-href="#/" class="home">
+    <div class="arrow clearfix">
+      <img id="rArrow" src="images/arrow.svg" alt="arrow" width="15">
+      <span>All Notes</span>
+    </div>
+  </a>
+
+  <ul>
+    <li ng-click="switchToEdit()" id="pencil"><img src="images/pencil.svg" alt="edit" width="25"></li>
+  </ul>
+</header>
+
+<form>
+  <div>
+    <div class="about">
+      <h1>{{ post.title }}</h1>
+    </div>
+
+    <div class="aboutCopy">
+     <p id="editBox" contenteditable="true">{{ post.copy }}</p>
+    </div>
+
+    <div class="btn"> <!-- IF VIEWING THE CUSTOM DIRECTIVE, COMMENT OUT THIS BTN -->
+      <span></span>
+      <input type="submit" value="SAVE" ng-click="savePost()">
+    </div>
+  </div>
+  
+<!--  CUSTOM ELEMENT HERE ALLOWS EDITING/CONVERSION OF M-DOWN, BUT WILL NOT TWO-WAY BIND  
+  <br>
+  <div class="aboutCopy">
+    <div id="editBox" bgz-markdown contenteditable="true">
+### HEADLINE {{ post.copy }}
+    </div>
+  </div>  
+
+  <div class="btn" ng-show="isEditMode">
+    <span></span>
+    <input type="submit" value="SAVE" ng-click="switchToPreview()">
+  </div> -->
+</form>

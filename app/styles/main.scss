@@ -1,0 +1,275 @@
+// bower:scss
+// endbower
+
+@import url(https://fonts.googleapis.com/css?family=Alegreya+Sans:100,400,700);
+
+/*---- MIXINS ----------------------*/
+@mixin inputKill {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  -webkit-outline: none;
+  -moz-outline: none;
+  outline: none;
+  border: none;
+}
+
+/*---- VARIABLES ----------------------*/
+$white: #f6f6f6;
+$lGrey: #d1d3d4;
+$charcoal: #636466;
+$black: #181615;
+$yellow: #f3bc14;
+
+
+/*---- UNIVERSAL ----------------------*/
+* {
+  -moz-box-sizing:    border-box;   /* Firefox 1, probably can drop this */
+  -webkit-box-sizing: border-box;   /* Safari 3-4, also probably droppable */
+  box-sizing:        border-box;   /* Everything else */
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+body {
+  font-size: 100%;
+  line-height: 1.3;
+  color: $black;
+  font-family: 'Alegreya Sans', sans-serif;
+  font-weight: 100;
+  letter-spacing: 0.03em;
+  background-color: $white;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+h4, h5, h6, button, a, input {
+  font-weight: 400;
+}
+
+p {
+  font-size: 1.2em;
+}
+
+#editBox {
+  @include inputKill;
+}
+
+/*==========================================
+                 MOBILE
+===========================================*/
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+header {
+  height: 50px;
+  padding: 8px 15px;
+  color: $yellow;
+  background-color: $charcoal;
+  .home {
+    display: inline-block;
+    cursor: pointer;
+  }
+  h2 {
+    width: 150px;
+    float: left;
+  }
+  .arrow {
+    float: left;
+    width: 81px;
+    margin-top: 3px;
+    #rArrow {
+      float: left;
+      -webkit-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      transform: rotate(180deg);
+    }
+    span {
+      color: $lGrey;
+      float: right;
+      margin-top: 3px;
+    }
+  }
+  #pencil {
+    margin-top: 5px;
+    cursor: pointer;
+  }
+  ul {
+    width: 35px;
+    float: right;
+    margin-top: -2px;
+    li {
+      text-align: center;
+      a {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.listContainer {
+  position: relative;
+  width: 100%;
+  height: 75px;
+  overflow: hidden;
+  #hiddenMenu {
+    position: absolute;
+    height: 75px;
+    top: 0;
+    right: 0;
+    z-index: 0;
+    a {
+      display: inline-block;
+      height: 75px;
+      padding: 27px 15px 0 15px;
+      cursor: pointer;
+      color: #fff;
+      &#about {
+        float: left;
+        width: 70px;
+        background-color: $yellow;
+      }
+      &#delete {
+        float: right;
+        width: 70px;
+        background-color: red;
+      }
+    }
+  }
+}
+
+.list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 75px;
+  padding: 15px;
+  background-color: #fff;
+  border-bottom: dotted 2px $white;
+  z-index: 99;
+  a {
+    color: $black;
+  }
+  .geo {
+    color: $lGrey;
+    font-weight: 100;
+    font-size: 0.8em;
+    margin-left: 20px;
+  }
+  span {
+    color: $charcoal;
+  }
+  .arrow {
+    display: inline-block;
+    width: 60px;
+    float: right;
+    margin-top: -13px;
+    cursor: pointer;
+    span {
+      float: left;
+      margin: 2px 0 0 7px;
+      color: $lGrey;
+    }
+    img {
+      float: right;
+    }
+  }
+}
+
+/*--- note ---*/
+#noteList {
+  float: right;
+  width: 53px;
+  margin-top: 2px;
+  li {
+    float: left;
+    margin: 0 14px;
+    cursor: pointer;
+  }
+}
+
+input[type="text"] {
+  @include inputKill;
+  width: 100%;
+  height: 65px;
+  padding: 10px;
+  font-size: 1.3em;
+  border-bottom: 1px dashed $lGrey;
+}
+
+input[type="submit"] {
+  position: relative;
+  @include inputKill;
+  width: 150px;
+  height: 50px;
+  font-size: 1.2em;
+  color: $yellow;
+  background-color: transparent;
+  border: 3px solid $yellow;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.btn {
+  position: relative;
+  width: 150px;
+  height: 50px;
+  margin: 15px 0 0 20px;
+  border-radius: 3px;
+  overflow: hidden;
+  span {
+    position: absolute;
+    width: 170px;
+    height: 100px;
+    top: -105px;
+    left: -5px;
+    transform: rotate(-5deg);
+    background-color: $yellow;
+    transition: all .2s linear;
+  }
+  &:hover {
+    input[type="submit"] {
+      color: $white;
+    }
+    span {
+      top: -5px;
+    }
+  }
+}
+
+/*--- about ---*/
+.about {
+  height: 60px;
+  padding: 10px 15px;
+  border-bottom: 1px solid $lGrey;
+  background-color: $white;
+}
+
+textarea, .copy, .aboutCopy {
+  width: 100%;
+  padding: 10px;
+  background-color: #fff;
+  font-size: 1em;
+  font-weight: 100;
+  @include inputKill;
+}
