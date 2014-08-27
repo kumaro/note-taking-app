@@ -35,19 +35,20 @@ To view the app, make sure you have [yeoman](http://yeoman.io/) installed.
 * Cd to directory in terminal
 * Run ```grunt serve```
 
-As of 8/26/14 app has the ability to:
+
+As of 8/27/14 app has the ability to:
 
 * View all lists
-* View single list
-* Add/delete list
-* Get geolocation
-* View 'About' page for list
+* Create, view, edit, and delete note
+* Create, view, edit 'About' section of note
+* Get geolocation of current position
 * Optimized for mobile/tablet
+* Utitlize Firebase Server API via AngularFire
+
 
 Updates to add for future versions:
 
-* Ability to edit/save list
 * Ability to allow Markdown viewable in HTML
 * Add Google Maps API for street view
-* Ability to add/edit specific 'About' per-note
 * Make Desktop friendly
+

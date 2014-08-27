@@ -7,36 +7,33 @@
   </a>
 
   <ul>
-    <li ng-click="switchToEdit()" id="pencil"><img src="images/pencil.svg" alt="edit" width="25"></li>
+    <li ng-click="switchToEdit()" id="pencil" ng-show="previewMode"><img src="images/pencil.svg" alt="edit" width="25"></li>
   </ul>
 </header>
 
 <form>
-  <div>
+  <div ng-show="previewMode">
     <div class="about">
       <h1>{{ post.title }}</h1>
     </div>
 
     <div class="aboutCopy">
-     <p id="editBox" contenteditable="true">{{ post.copy }}</p>
-    </div>
-
-    <div class="btn"> <!-- IF VIEWING THE CUSTOM DIRECTIVE, COMMENT OUT THIS BTN -->
-      <span></span>
-      <input type="submit" value="SAVE" ng-click="savePost()">
+     <p id="editBox">{{ post.copy }}</p>
     </div>
   </div>
-  
-<!--  CUSTOM ELEMENT HERE ALLOWS EDITING/CONVERSION OF M-DOWN, BUT WILL NOT TWO-WAY BIND  
-  <br>
-  <div class="aboutCopy">
-    <div id="editBox" bgz-markdown contenteditable="true">
-### HEADLINE {{ post.copy }}
-    </div>
-  </div>  
 
-  <div class="btn" ng-show="isEditMode">
-    <span></span>
-    <input type="submit" value="SAVE" ng-click="switchToPreview()">
-  </div> -->
+  <div ng-hide="previewMode">
+    <div class="title">
+      <input type="text" placeholder="Enter Title…" ng-model="post.title" ng-change="post.$save(title)" required>
+    </div>
+    
+    <div class="copy">
+      <textarea cols="30" rows="10" ng-model="post.copy" ng-change="post.$save(copy)">{{ post.copy }}</textarea>
+    </div>
+    
+    <div class="btn">
+      <span></span>
+      <input type="submit" value="PREVIEW" ng-click="switchToPreview()">
+    </div>
+  </div>
 </form>

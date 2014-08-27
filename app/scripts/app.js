@@ -19,8 +19,10 @@ var app = angular.module('noteTakingApp', [
     'ngSanitize',
     'ngTouch',
     'firebase'
-  ])
-  .config(function ($routeProvider) {
+  ]);
+
+// Route for app
+app.config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -34,13 +36,14 @@ var app = angular.module('noteTakingApp', [
         templateUrl: 'views/soloPost.html',
         controller: 'PostViewCtrl'
       })
-      .when('/about', {
+      .when('/about/:postId', {
         templateUrl: 'views/about.html',
-        controller: 'MainCtrl'
+        controller: 'PostViewCtrl'
       })
       .otherwise({
         redirectTo: '/'
       });
-  })
-  // Utilize constant for referencing URL throughout app
-  .constant('FIREBASE_URL', 'https://blazing-fire-9744.firebaseio.com/');
+  });
+
+  // Constant for referencing URL throughout app
+app.constant('FIREBASE_URL', 'https://blazing-fire-9744.firebaseio.com/');

@@ -7,14 +7,34 @@
   </a>
 
   <ul>
-    <li><a id="pencil"><img src="images/pencil.svg" alt="edit" width="25"></a></li>
+    <li ng-click="switchToEdit()" id="pencil" ng-show="previewMode"><img src="images/pencil.svg" alt="edit" width="25"></li>
   </ul>
 </header>
 
-<div class="about">
-	<h1>About</h1>
-</div>
+<form>
+  <div ng-show="previewMode">
+    <div class="about">
+      <h1>{{ post.title }}</h1>
+    </div>
 
-<div class="aboutCopy">
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium quod blanditiis ipsa ducimus aspernatur, quasi reiciendis tenetur ut sint, quae possimus porro deleniti earum iure illo voluptates libero voluptatum alias!</p>
-</div>
+    <div class="aboutCopy">
+     <p id="editBox">{{ post.aboutCopy }}</p>
+    </div>
+  </div>
+
+  <!-- edit mode = true, show this -->
+  <div ng-hide="previewMode">
+    <div class="about">
+      <h1>{{ post.title }}</h1>
+    </div>
+    
+    <div class="copy">
+      <textarea cols="30" rows="10" ng-model="post.aboutCopy" ng-change="post.$save(copy)">{{ post.aboutCopy }}</textarea>
+    </div>
+    
+    <div class="btn">
+      <span></span>
+      <input type="submit" value="PREVIEW" ng-click="switchToPreview()">
+    </div>
+  </div>
+</form>

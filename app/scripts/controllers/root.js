@@ -1,4 +1,13 @@
 'use strict';
+/**
+ * @ngdoc overview
+ * @name noteTakingApp
+ * @description
+ * # noteTakingApp
+ *
+ * Rootscope of the application.
+ */
+
 
 // rootScope allows for usage on ngView element
 app.run(function($rootScope, $window, $location, Post) {

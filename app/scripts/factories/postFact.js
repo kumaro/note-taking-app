@@ -1,4 +1,12 @@
 'use strict';
+/**
+ * @ngdoc overview
+ * @name noteTakingApp
+ * @description
+ * # noteTakingApp
+ *
+ * Factory of the application.
+ */
 
 app.factory('Post', function($firebase, $window, FIREBASE_URL) {
 
@@ -15,9 +23,6 @@ app.factory('Post', function($firebase, $window, FIREBASE_URL) {
 	  },
 	  delete: function(post) {
 	    return posts.$remove(post);
-	  },
-	  save: function(post) {
-		  return posts.$save(post);
 	  }
 	};
  
