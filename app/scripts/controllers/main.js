@@ -9,7 +9,7 @@
  */
 
 // Main Controller for App
-app.controller('MainCtrl', function($scope, Post, $location) {
+app.controller('MainCtrl', ['$scope', 'Post', '$location', function($scope, Post, $location) {
 
   // Assign posts to 'all' from factory
   $scope.posts = Post.all;
@@ -57,4 +57,4 @@ app.controller('MainCtrl', function($scope, Post, $location) {
     }
   };
 
-});
+}]);

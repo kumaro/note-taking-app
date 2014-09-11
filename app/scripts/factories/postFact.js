@@ -8,7 +8,7 @@
  * Factory of the application.
  */
 
-app.factory('Post', function($firebase, $window, FIREBASE_URL) {
+app.factory('Post', ['$firebase', '$window', 'FIREBASE_URL', function($firebase, $window, FIREBASE_URL) {
 
 	var ref = new $window.Firebase(FIREBASE_URL + 'lists');
 	var posts = $firebase(ref).$asArray();
@@ -27,4 +27,4 @@ app.factory('Post', function($firebase, $window, FIREBASE_URL) {
 	};
  
 	return Post;
-});
+}]);

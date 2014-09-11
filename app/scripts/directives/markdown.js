@@ -42,15 +42,16 @@
 //});
 
 // ALTERNATE DIRECTIVE FOR MARKDOWN CONVERSION
-app.directive('bgzMarkdown', function($window) {
+app.directive('bgzMarkdown', ['$window', function($window) {
     var converter = new $window.Showdown.converter();
 
     return {
-      restrict: 'EA',
-      template: './views/test.html',
+      restrict: 'E',
+      scope: { copy: '@' },
+      template: '<div class="aboutCopy"><p id="editBox">{{ post.copy }}</p></div>',
       link: function(scope, element, attrs) {
         var htmlText = converter.makeHtml(element.text());
         element.html(htmlText);
       }
     };
-});
+}]);

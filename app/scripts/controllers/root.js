@@ -10,7 +10,7 @@
 
 
 // rootScope allows for usage on ngView element
-app.run(function($rootScope, $window, $location, Post) {
+app.run(['$rootScope', '$window', '$location', 'Post', function($rootScope, $window, $location, Post) {
 
   // Get geoLocation immediately  --> GOOGLE HAS API THAT WILL PROVIDE BETTER UX TO IMPLEMENT / NEED TO READ DOCS
   $rootScope.getGeo = function() {
@@ -39,4 +39,4 @@ app.run(function($rootScope, $window, $location, Post) {
 
   };
 
-});
+}]);

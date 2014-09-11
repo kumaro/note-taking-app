@@ -22,7 +22,7 @@ var app = angular.module('noteTakingApp', [
   ]);
 
 // Route for app
-app.config(function ($routeProvider) {
+app.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -43,7 +43,7 @@ app.config(function ($routeProvider) {
       .otherwise({
         redirectTo: '/'
       });
-  });
+  }]);
 
   // Constant for referencing URL throughout app
 app.constant('FIREBASE_URL', 'https://blazing-fire-9744.firebaseio.com/');
