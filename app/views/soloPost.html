@@ -12,18 +12,16 @@
 </header>
 
 <form>
+  <!-- Preview mode -->
   <div ng-show="previewMode">
     <div class="about">
       <h1>{{ post.title }}</h1>
     </div>
 
-    <div class="aboutCopy">
-     <p id="editBox">{{ post.copy }}</p>
-    </div>
-
-     <bgz-markdown></bgz-markdown>
+     <bgz-markdown markdown="post.copy" id="bgzMarkdown"></bgz-markdown>
   </div>
 
+  <!-- Edit mode -->
   <div ng-hide="previewMode">
     <div class="title">
       <input type="text" placeholder="Enter Title…" ng-model="post.title" ng-change="post.$save(title)" required>

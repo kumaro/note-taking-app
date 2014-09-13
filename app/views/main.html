@@ -11,7 +11,7 @@
   <!-- list container, ng-repeat repeats all lists in object -->
   <div class="listContainer" ng-repeat="post in posts">
     <div class="list">
-      <a ng-href="#/view/{{ post.$id }}"> <!-- bind list title property -->
+      <a ng-href="#/view/{{ post.$id }}" ng-click="viewPost()"> <!-- bind list title property -->
         <h3 class="title">{{ post.title | limitTo: 12 }}<span class="geo">{{ geo | limitTo: 20 }} …</span></h3>
         <span>{{ post.copy | limitTo: 30 }} …</span> <!-- bind list copy property, limit to 30 characters -->
       </a>

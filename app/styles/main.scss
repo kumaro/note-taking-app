@@ -27,9 +27,9 @@ $yellow: #f3bc14;
 
 /*---- UNIVERSAL ----------------------*/
 * {
-  -moz-box-sizing:    border-box;   /* Firefox 1, probably can drop this */
+  -moz-box-sizing: border-box;   /* Firefox 1, probably can drop this */
   -webkit-box-sizing: border-box;   /* Safari 3-4, also probably droppable */
-  box-sizing:        border-box;   /* Everything else */
+  box-sizing: border-box;   /* Everything else */
   margin: 0;
   padding: 0;
   list-style-type: none;
@@ -244,7 +244,7 @@ input[type="submit"] {
   position: relative;
   width: 150px;
   height: 50px;
-  margin: 15px 0 0 20px;
+  margin: 15px 0 20px 20px;
   border-radius: 3px;
   overflow: hidden;
   span {
@@ -282,4 +282,17 @@ textarea, .copy {
   font-size: 1em;
   font-weight: 100;
   @include inputKill;
+}
+
+#bgzMarkdown {
+  padding: 0 5px;
+}
+
+/*==========================================
+            LANDSCAPE TABLET +
+===========================================*/
+@media screen and (min-width: 1020px) {
+
+
+  
 }

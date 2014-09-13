@@ -32,23 +32,23 @@ Note Taking App
 
 To view the app, make sure you have [yeoman](http://yeoman.io/) installed.
 
-* Cd to directory in terminal
+* cd to directory in terminal
 * Run ```grunt serve```
 
 
-As of 8/27/14 app has the ability to:
+###As of 8/27/14 app has the ability to:
 
 * View all lists
 * Create, view, edit, and delete note
 * Create, view, edit 'About' section of note
+* Note may be written in Markdown &amp; converted to HTML
 * Get geolocation of current position
-* Optimized for mobile/tablet
+* Optimized for mobile/tablet view
 * Utitlize Firebase Server API via AngularFire
 
 
-Updates to add for future versions:
+###Updates to add for future versions:
 
-* Ability to allow Markdown viewable in HTML
 * Add Google Maps API for street view
 * Make Desktop friendly
 
