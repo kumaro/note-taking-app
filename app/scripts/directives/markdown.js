@@ -1,7 +1,8 @@
 'use strict';
 
 // Custom <markdown> element directive
-app.directive('bgzMarkdown', ['$window', '$sanitize', function($window, $sanitize) {
+angular.module('noteTakingApp')
+.directive('bgzMarkdown', ['$window', '$sanitize', function($window, $sanitize) {
     var converter = new $window.Showdown.converter();
 
     return {

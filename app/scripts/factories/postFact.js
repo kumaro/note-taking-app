@@ -8,7 +8,8 @@
  * Factory of the application.
  */
 
-app.factory('Post', ['$firebase', '$window', 'FIREBASE_URL', function($firebase, $window, FIREBASE_URL) {
+angular.module('noteTakingApp')
+.factory('Post', ['$firebase', '$window', 'FIREBASE_URL', function($firebase, $window, FIREBASE_URL) {
 
 	var ref = new $window.Firebase(FIREBASE_URL + 'lists');
 	var posts = $firebase(ref).$asArray();

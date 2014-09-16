@@ -1,5 +1,4 @@
 'use strict';
-/* global app: true */
 
 /**
  * @ngdoc overview
@@ -9,9 +8,8 @@
  *
  * Main module of the application.
  */
-
-// Main module of the application.
-var app = angular.module('noteTakingApp', [
+angular
+  .module('noteTakingApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
@@ -19,10 +17,10 @@ var app = angular.module('noteTakingApp', [
     'ngSanitize',
     'ngTouch',
     'firebase'
-  ]);
+  ])
 
-// Route for app
-app.config(['$routeProvider', function ($routeProvider) {
+  // Routes for app
+  .config(['$routeProvider', function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -43,7 +41,7 @@ app.config(['$routeProvider', function ($routeProvider) {
       .otherwise({
         redirectTo: '/'
       });
-  }]);
+  }])
 
   // Constant for referencing URL throughout app
-app.constant('FIREBASE_URL', 'https://blazing-fire-9744.firebaseio.com/');
+  .constant('FIREBASE_URL', 'https://blazing-fire-9744.firebaseio.com/');
